@@ -11,7 +11,7 @@ namespace OrdenadorDeIconos
     {
         public static Icon Extraer()
         {
-            var filePath = @"C:\Users\Turbioh\Desktop\Godot.lnk";
+            var filePath = @"C:\Users\Turbioh\Desktop\Visual Studio 2017.lnk";
             var theIcon = IconFromFilePath(filePath);
 
             if (theIcon != null)
@@ -20,7 +20,7 @@ namespace OrdenadorDeIconos
                 
                 using (var stream = new System.IO.FileStream(@"C:\icono.bmp", System.IO.FileMode.CreateNew))
                 {
-                    theIcon.ToBitmap();
+                    theIcon.ToBitmap(); //transform to BMP
                     theIcon.Save(stream);
                     return theIcon;
                 }

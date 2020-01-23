@@ -22,6 +22,7 @@ namespace OrdenadorDeIconos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Operaciones.ListarEscritorio();
             pictureBox1.Image = ExtractorDeIcono.Extraer().ToBitmap();
             label1.Text = "presionado";
             
