@@ -17,11 +17,12 @@ namespace OrdenadorDeIconos
             if (theIcon != null)
             {
                 // Save it to disk, or do whatever you want with it.
-                //return theIcon;
-                using (var stream = new System.IO.FileStream(@"C:\\", System.IO.FileMode.CreateNew))
+                
+                using (var stream = new System.IO.FileStream(@"C:\icono.bmp", System.IO.FileMode.CreateNew))
                 {
-                    
-                    //theIcon.Save(stream);
+                    theIcon.ToBitmap();
+                    theIcon.Save(stream);
+                    return theIcon;
                 }
             }
             return null;
