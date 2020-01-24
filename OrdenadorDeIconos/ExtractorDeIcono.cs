@@ -11,16 +11,17 @@ namespace OrdenadorDeIconos
     {
         public static Icon Extraer()
         {
-            var filePath = @"C:\Users\Turbioh\Desktop\balenaEtcher.lnk";
+            var filePath = @"C:\Users\Turbioh\Desktop\Netflix.lnk";
             var theIcon = IconFromFilePath(filePath);
 
             if (theIcon != null)
             {
                 // Save it to disk, or do whatever you want with it.
                 return theIcon;
+
                 /*using (var stream = new System.IO.FileStream(@"C:\Users\Turbioh\Desktop\icono.ico", System.IO.FileMode.CreateNew))
                 {
-                    //theIcon.ToBitmap(); //transform to BMP
+                    //theIcon.ToBitmap(); //transformp el icono a BMP
                     theIcon.Save(stream);
                     return theIcon;
                 }*/
@@ -32,13 +33,13 @@ namespace OrdenadorDeIconos
         {
             var result = (Icon)null;
 
-            try
+            try //manejo de excepciones
             {
                 result = Icon.ExtractAssociatedIcon(filePath);
             }
             catch (System.Exception)
             {
-                // swallow and return nothing. You could supply a default Icon here as well
+                
             }
 
             return result;
