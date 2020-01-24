@@ -11,19 +11,19 @@ namespace OrdenadorDeIconos
     {
         public static Icon Extraer()
         {
-            var filePath = @"C:\Users\Turbioh\Desktop\Visual Studio 2017.lnk";
+            var filePath = @"C:\Users\Turbioh\Desktop\Spotify.lnk";
             var theIcon = IconFromFilePath(filePath);
 
             if (theIcon != null)
             {
                 // Save it to disk, or do whatever you want with it.
-                
-                using (var stream = new System.IO.FileStream(@"C:\icono.bmp", System.IO.FileMode.CreateNew))
+                return theIcon;
+                /*using (var stream = new System.IO.FileStream(@"C:\icono.bmp", System.IO.FileMode.CreateNew))
                 {
                     theIcon.ToBitmap(); //transform to BMP
                     theIcon.Save(stream);
                     return theIcon;
-                }
+                }*/
             }
             return null;
         }
