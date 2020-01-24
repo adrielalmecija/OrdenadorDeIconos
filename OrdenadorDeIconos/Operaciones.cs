@@ -11,7 +11,32 @@ namespace OrdenadorDeIconos
     class Operaciones
     {
         
-       
+        public static Color ColorPromedio(Bitmap icono)
+        {
+            int R=0, G=0, B=0, A=0, Resolucion=0;
+            Color color = icono.GetPixel(0, 0);
+            Resolucion = icono.Height * icono.Width;
+            Console.WriteLine(icono.Height + " " + icono.Width + " " + Resolucion);
+            for(int i=0;i< icono.Height; i++)
+            {
+                for(int k=0;k< icono.Width;k++)
+                {
+                    color = icono.GetPixel(i,k);
+                    R += color.R;
+                    G += color.G;
+                    B += color.B;
+                    A += color.A;
+                }
+            }
+            R /= Resolucion;
+            G /= Resolucion;
+            B /= Resolucion;
+            A /= Resolucion;
+
+            color = Color.FromArgb(A,R, G, B);
+            Console.WriteLine(color);
+            return color;
+        }
         public static Color AverageColor(string fileName)
         {
             using (var bmp = new Bitmap(fileName))

@@ -23,8 +23,11 @@ namespace OrdenadorDeIconos
         private void button1_Click(object sender, EventArgs e)
         {
             Operaciones.ListarEscritorio();
-            pictureBox1.Image = ExtractorDeIcono.Extraer().ToBitmap();
-            label1.Text = "presionado";
+            Bitmap icono = new Bitmap(ExtractorDeIcono.Extraer().ToBitmap());
+            pictureBox1.Image = icono;
+            Operaciones.ColorPromedio(icono);
+
+            label1.Text = Operaciones.ColorPromedio(icono).ToString();
             
             
         }

@@ -11,16 +11,16 @@ namespace OrdenadorDeIconos
     {
         public static Icon Extraer()
         {
-            var filePath = @"C:\Users\Turbioh\Desktop\Spotify.lnk";
+            var filePath = @"C:\Users\Turbioh\Desktop\balenaEtcher.lnk";
             var theIcon = IconFromFilePath(filePath);
 
             if (theIcon != null)
             {
                 // Save it to disk, or do whatever you want with it.
                 return theIcon;
-                /*using (var stream = new System.IO.FileStream(@"C:\icono.bmp", System.IO.FileMode.CreateNew))
+                /*using (var stream = new System.IO.FileStream(@"C:\Users\Turbioh\Desktop\icono.ico", System.IO.FileMode.CreateNew))
                 {
-                    theIcon.ToBitmap(); //transform to BMP
+                    //theIcon.ToBitmap(); //transform to BMP
                     theIcon.Save(stream);
                     return theIcon;
                 }*/
